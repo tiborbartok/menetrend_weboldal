@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "webkert-2023": {
+      "hosting": {
+        "webkert": [
+          "webkert-2023"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "webkert-2023"
+  }
+}

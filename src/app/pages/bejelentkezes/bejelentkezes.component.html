@@ -1,0 +1,10 @@
+<div class="homepage_component">
+    <h1>Jelentkezz be a Szegedi Menetrend Alkalmazásba!</h1>
+    <mat-form-field><mat-label for="email">E-mail cím: </mat-label><input matInput type="text" [formControl]="email"/></mat-form-field>
+    <mat-form-field><mat-label for="jelszo">Jelszó: </mat-label><input matInput type="password" [formControl]="jelszo"/></mat-form-field>
+    <mat-divider></mat-divider>
+    <span>
+    <span><button mat-raised-button color="accent" (click)="login()">Bejelentkezés</button></span>
+    <span><button mat-raised-button color="primary" [routerLink]="'/regisztracio'">Még nem regisztráltál?</button></span>
+    </span>
+</div>

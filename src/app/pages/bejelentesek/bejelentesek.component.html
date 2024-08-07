@@ -1,0 +1,35 @@
+<div>
+    <h1>Majdnem kettészakadó buszon utazott? Esetleg egy összehányt ülést látott? Itt megteheti a bejelentését!</h1>
+</div>
+<form [formGroup]="bejelentesUrlap" (ngSubmit)="addBejelentes()">
+    <div>
+        <mat-form-field>
+        <mat-label for="felhasznalonev">Felhasználónév: </mat-label>
+        <input matInput type="text" formControlName="felhasznalonev"/>
+        </mat-form-field>
+    </div>
+    <div>
+        <mat-form-field>
+            <mat-label for="bejelentes">Bejelentés: </mat-label>
+            <textarea matInput cols="40" rows="10" formControlName="bejelentes"></textarea>
+        </mat-form-field>
+    </div>
+    <div>
+        <button mat-raised-button color="accent" type="submit">Bejelentés</button>
+    </div>
+</form>
+
+<div *ngIf="bejelentesek.length">
+    <table>
+        <tr>
+            <th>Felhasználónév</th>
+            <th>Bejelentés</th>
+            <th>Dátum</th>
+        </tr>
+        <tr *ngFor="let bejelentes of bejelentesek; let i = index;" [ngClass]="i % 2 === 0 ? 'table-even' : 'table-odd'">
+            <td>{{bejelentes.felhasznalonev}}</td>
+            <td>{{bejelentes.bejelentes}}</td>
+            <td>{{bejelentes.datum | datumFormatum}}</td>
+        </tr>
+    </table>
+</div>

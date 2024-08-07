@@ -1,0 +1,29 @@
+<mat-sidenav-container>
+  <mat-sidenav #sidenav>
+    <app-menu (selectedPage)="changePage($event)" [currentPage]="page" [loggedInUser]="loggedInUser"></app-menu>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <div fxHide.gt-md>
+        <button mat-icon-button (click)="onToggleSidenav(sidenav)">
+          <mat-icon>menu</mat-icon>
+        </button>
+      </div>
+      <div>Szegedi Menetrendek</div>
+      <div fxFlex fxLayout fxLayoutAlign="flex-end" fxHide.md>
+        <ul fxLayout fxLayoutGap="20px" class="nav-items">
+          <li><a routerLink="/homepage">Homepage</a></li>
+          <li><a routerLink="/busz">Buszok</a></li>
+          <li><a routerLink="/villamos">Villamosok</a></li>
+          <li><a routerLink="/trolibusz">Trolibuszok</a></li>
+          <li><a routerLink="/vasutvillamos">Vasútvillamos</a></li>
+          <li><a routerLink="/bejelentesek">Bejelentések</a></li>
+          <li><a routerLink="/regisztracio">Regisztráció</a></li>
+          <li *ngIf="!(loggedInUser)"><a routerLink="/bejelentkezes">Bejelentkezés</a></li>
+          <li *ngIf="loggedInUser"><a routerLink="/bejelentkezes" (click)="logout()">Kijelentkezés</a></li>
+        </ul>
+      </div>
+    </mat-toolbar>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

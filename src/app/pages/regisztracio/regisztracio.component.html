@@ -1,0 +1,18 @@
+<div class="homepage_component">
+    <div class="div-flex">
+        <h1>Regisztrálj a Szegedi Menetrend Alkalmazásba!</h1>
+        <form [formGroup]="regisztraciosUrlap" (ngSubmit)="onSubmit()">
+            <mat-form-field><mat-label for="email">E-mail cím: </mat-label><input matInput type="text" formControlName="email"/></mat-form-field>
+            <mat-form-field><mat-label for="jelszo">Jelszó: </mat-label><input matInput type="password" formControlName="jelszo"/></mat-form-field>
+            <div formGroupName="nev" class="subForm">
+                <mat-form-field><mat-label for="vezeteknev">Vezetéknév: </mat-label><input matInput type="text" formControlName="vezeteknev"/></mat-form-field>
+                <mat-form-field><mat-label for="keresztnev">Keresztnév: </mat-label><input matInput type="text" formControlName="keresztnev"/></mat-form-field>
+            </div>
+            <mat-divider></mat-divider>
+            <div>
+                <span class="button"><button mat-flat-button color="accent" type="submit">Regisztráció</button></span>
+                <span class="button"><button mat-flat-button color="primary" [routerLink]="'/bejelentkezes'">Már van fiókod?</button></span>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,50 @@
+<mat-nav-list>
+    <a mat-list-item routerLink="/homepage">
+        <mat-icon>home</mat-icon>
+        <span>Főoldal</span>
+    </a>
+    <a mat-list-item routerLink="/busz">
+        <mat-icon>directions_bus</mat-icon>
+        <span>Buszok</span>
+    </a>
+    <a mat-list-item routerLink="/villamos">
+        <mat-icon>tram</mat-icon>
+        <span>Villamosok</span>
+    </a>
+    <a mat-list-item routerLink="/trolibusz">
+        <mat-icon>directions_bus</mat-icon>
+        <span>Trolibuszok</span>
+    </a>
+    <a mat-list-item routerLink="/vasutvillamos">
+        <mat-icon>train</mat-icon>
+        <span>Vasútvillamos</span>
+    </a>
+    <a mat-list-item routerLink="/bejelentesek">
+        <mat-icon>menu_book</mat-icon>
+        <span>Bejelentések</span>
+    </a>
+    <a mat-list-item routerLink="/regisztracio">
+        <mat-icon>app_registration</mat-icon>
+        <span>Regisztráció</span>
+    </a>
+    <a mat-list-item routerLink="/bejelentkezes" *ngIf="!(loggedInUser)">
+        <mat-icon>login</mat-icon>
+        <span>Bejelentkezés</span>
+    </a>
+    <a mat-list-item routerLink="/bejelentkezes" *ngIf="loggedInUser">
+        <mat-icon>logout</mat-icon>
+        <span>Kijelentkezés</span>
+    </a>
+</mat-nav-list>
+
+
+<!--<select [(ngModel)]="currentPage" (change)="menuSwitch()">
+    <option value="homepage">Homepage</option>
+    <option value="busz">Buszok</option>
+    <option value="villamos">Villamosok</option>
+    <option value="trolibusz">Trolibuszok</option>
+    <option value="vasutvillamos">Vasútvillamos</option>
+    <option value="bejelentesek">Bejelentések</option>
+    <option value="regisztracio">Regisztráció</option>
+    <option value="bejelentkezes">Bejelentkezés</option>
+</select>-->
